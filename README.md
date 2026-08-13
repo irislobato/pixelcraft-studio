@@ -2,7 +2,7 @@
 
 > **Pixelcraft Studio** 🎨 E-commerce nostálgico que une arte feita à mão com a estética Y2K de interfaces clássicas. Projeto front-end responsivo construído com HTML, CSS e JS puro, com foco no uso de variáveis CSS, animações e uso de LocalStorage.
 
-![Status do Projeto](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
+![Status do Projeto](https://img.shields.io/badge/Status-Em_Andamento-success?style=for-the-badge)
 
 ## 📌 Sobre o Projeto
 
