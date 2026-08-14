@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-VariableFont_wght.ttf") format(truetype);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  max-height: 90px;
+  height: 100%;
+  background-color: black;
+  img {
+    height: 95%;
+    margin-left: 1%;
+  }
+  .card-header {
+    background-color: aliceblue;
+    font-family: "JetBrains Mono";
+  }
+}
+
+/*desktop*/
+@media (min-width: 1281px) {
+}
+
+/*tablet portrait*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/*celular portrait*/
+@media (min-width: 320px) and (max-width: 480px) {
+}
