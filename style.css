@@ -172,8 +172,16 @@ main {
     background-color: black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
     .texto-card-model{
-      
+      color: #faf6ee;
+      font-family: 'JetBrains Mono';
+      font-size: 12px;
+      padding: 7px;
+    }
+    .bolinha-rosa{
+      background-color: #ff00a8;
     }
   }
 }
