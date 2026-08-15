@@ -69,120 +69,220 @@ header {
       width: 120px;
       text-align: center;
     }
-  }
 
-  #status {
-    background-color: #ff00a8;
+    .card-header:hover {
+      background-color: #ff00a8;
+      transition: 0.5s ease-in-out;
+      transform: scale(0.95);
+    }
+
+    #status {
+      background-color: #ff00a8;
+    }
+
+    #status:hover {
+      background-color: #aa0071;
+    }
   }
 }
 
 main {
   background-color: #faf6ee;
 
-  .inicio-container {
-    display: flex;
-    height: 690px;
-    width: 100%;
-    .primeiro-bloco {
+  .principal {
+    padding: 30px;
+  }
+  .bloco-um {
+    .inicio-container {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-      margin-left: 3%;
-      h3 {
-        background-color: black;
-        color: #39ff14;
-        font-family: "JetBrains Mono";
-        font-size: 11px;
-        max-width: 210px;
-        border-radius: 5px;
-        padding: 5px;
-        text-align: center;
-      }
-      h1 {
-        font-family: "JetBrains Mono";
-        font-weight: 1000;
-        font-size: 50px;
-      }
-      h4 {
-        font-family: "Inter";
-        font-size: 16px;
-        font-weight: 300;
-      }
-
-      .texto-meio {
+      height: 615px;
+      width: 100%;
+      .primeiro-bloco {
         display: flex;
-        gap: 15px;
-        h2 {
-          font-family: "CaveatBrush";
-          color: #ff00a8;
-          font-size: 36px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-left: 3%;
+        h3 {
+          background-color: black;
+          color: #39ff14;
+          font-family: "JetBrains Mono";
+          font-size: 11px;
+          max-width: 210px;
+          border-radius: 5px;
+          padding: 5px;
+          text-align: center;
         }
-        h6 {
+        h1 {
+          font-family: "JetBrains Mono";
           font-weight: 1000;
           font-size: 50px;
-          margin-top: -30px;
         }
-        h5 {
-          color: #d27d56;
-          font-family: "JetBrains Mono";
+        h4 {
+          font-family: "Inter";
+          font-size: 16px;
+          font-weight: 300;
+        }
+
+        .texto-meio {
           display: flex;
-          align-self: center;
-          font-size: 14px;
+          gap: 15px;
+          h2 {
+            font-family: "CaveatBrush";
+            color: #ff00a8;
+            font-size: 36px;
+          }
+          h6 {
+            font-weight: 1000;
+            font-size: 50px;
+            margin-top: -30px;
+          }
+          h5 {
+            color: #d27d56;
+            font-family: "JetBrains Mono";
+            display: flex;
+            align-self: center;
+            font-size: 14px;
+          }
+        }
+
+        .container-botoes-inicio {
+          display: flex;
+          gap: 20px;
+          .botoes-inicio {
+            font-family: "JetBrains Mono";
+            font-weight: 600;
+            border: 2px solid;
+            padding: 10px;
+            font-size: 13px;
+            border-radius: 5px;
+            border-color: black;
+            margin-top: 20px;
+          }
+          .botoes-inicio:hover{
+            transform: scale(0.95);
+            transition: 0.5s ease-in-out;
+          }
+          .botao-inicio-azul {
+            background-color: #00f0ff;
+            color: black;
+          }
+          .botao-inicio-azul:hover{
+            background-color: hwb(184 0% 25%);
+          }
+          .botao-inicio-rosa {
+            background-color: #ff00a8;
+            color: #faf6ee;
+          }
+          .botao-inicio-rosa:hover{
+            background-color: #aa0071;
+          }
         }
       }
-
-      .container-botoes-inicio {
+      .segundo-bloco {
         display: flex;
-        gap: 20px;
-        .botoes-inicio {
-          font-family: "JetBrains Mono";
-          font-weight: 600;
-          border: 2px solid;
-          padding: 10px;
-          font-size: 13px;
-          border-radius: 5px;
-          border-color: black;
-          margin-top: 20px;
+        flex-direction: column;
+        align-content: center;
+        margin: 100px;
+        #img-inicio {
+          border: 3px solid black;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
         }
-        .botao-inicio-azul {
-          background-color: #00f0ff;
-          color: black;
-        }
-        .botao-inicio-rosa {
-          background-color: #ff00a8;
-          color: #faf6ee;
-        }
-      }
-    }
-
-    .segundo-bloco {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      margin: 100px;
-      #img-inicio {
-        border: 3px solid black;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
       }
     }
   }
+  .faixa-amarela-carrossel {
+    display: block;
+    background-color: #f4c430;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+
+    .faixa-track {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: max-content;
+      animation: scrolling 80s linear infinite;
+    }
+
+    /* NOVA REGRA: Garante que os grupos fiquem lado a lado */
+    .faixa-grupo {
+      display: flex;
+    }
+
+    .faixa-amarela-container {
+      display: flex;
+      align-items: center;
+      padding-right: 30px;
+      gap: 9px;
+      flex-shrink: 0;
+
+      p {
+        font-family: "JetBrains Mono";
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      .faixa-img-prisma {
+        height: 20px;
+      }
+
+      .faixa-img {
+        height: 12px;
+      }
+    }
+  }
+
   .titulo-card-model {
     background-color: black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: flex;
     flex-direction: row;
-    .texto-card-model{
+    justify-content: space-between;
+
+    .bola-texto {
+      display: flex;
+    }
+
+    .texto-card-model {
       color: #faf6ee;
-      font-family: 'JetBrains Mono';
+      font-family: "JetBrains Mono";
       font-size: 12px;
       padding: 7px;
     }
-    .bolinha-rosa{
-      background-color: #ff00a8;
+    .card-model-img {
+      width: 30px;
+      height: 30px;
+      padding: 9px;
     }
+    .quadrado {
+      border: 1px solid white;
+      padding: 0;
+      width: 15px;
+      height: 15px;
+    }
+    .quadrado-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 20px;
+    }
+  }
+
+
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 /*desktop*/
