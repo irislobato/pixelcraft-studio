@@ -106,6 +106,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: justify;
         gap: 20px;
         h3 {
           background-color: black;
@@ -429,6 +430,90 @@ main {
           color: gray;
           font-weight: 200;
           font-size: 13px;
+        }
+      }
+    }
+  }
+  .bloco-quatro {
+    display: flex;
+    flex-direction: row;
+    font-family: "JetBrains Mono";
+    gap: 40px;
+
+    .bl-quatro-esquerda {
+      max-width: 600px;
+      border: 2px solid black;
+      border-radius: 12px;
+      #img-artesa {
+        width: 600px;
+        padding: 30px;
+      }
+      .sub-texto {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -20px;
+        padding: 15px;
+        p {
+          font-size: 11px;
+        }
+        h6 {
+          font-family: "CaveatBrush";
+          font-size: 18px;
+          color: #ff00a8;
+          font-weight: 500;
+        }
+      }
+    }
+    .bl-quatro-direita {
+      font-family: 'JetBrains Mono';
+      h3{
+        font-size: 14px;
+        color: #d27d56;        
+      }
+      h1{
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      .texto-card-conheca{
+        text-align: justify;
+        padding: 20px;
+        border: 2px solid black;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        p{
+          font-family: 'Inter';
+          font-weight: 300;
+        }
+        h6{
+          font-family: 'CaveatBrush';
+          font-size: 30px;
+          color: #ff00a8;
+          margin-top: 30px;
+        }
+        h1{
+          font-size: 'Inter';
+          font-size: 10px;
+          margin-top: 10px;
+          color: #d27d56;
+        }
+        .sub-texto-conheca{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h4{
+            font-size: 12px;
+            color: #d27d56;
+          }
+          h5{
+            font-size: 10px;
+            background-color: black;
+            color: #39ff14;
+            padding: 7px;
+            border-radius: 5px;
+          }
         }
       }
     }
