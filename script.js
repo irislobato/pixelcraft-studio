@@ -63,9 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar-carrinho");
   const overlay = document.getElementById("overlay-carrinho");
 
-  // Função para abrir o carrinho com o 'event' como parâmetro
   function abrirCarrinho(event) {
-    event.preventDefault(); // Impede que o link "#" faça a tela pular pro topo
+    event.preventDefault(); 
     sidebar.classList.add("aberta");
     overlay.classList.add("aberta");
     document.body.style.overflow = "hidden";
