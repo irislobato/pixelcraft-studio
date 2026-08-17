@@ -87,15 +87,17 @@ header {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 main {
   background-color: #faf6ee;
 
   .principal {
     padding: 50px;
   }
-  button {
-    cursor: pointer;
-  }
+
   .bloco-um {
     .inicio-container {
       display: flex;
@@ -830,6 +832,80 @@ footer {
     margin-inline: 10px;
   }
 }
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.overlay.hide {
+  display: none;
+}
+.cookies {
+  width: 800px;
+  background-color: #faf6ee;
+  color: black;
+  padding: 20px;
+  border: 2px solid #ff00a8;
+  font-family: "JetBrains Mono";
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  .titulo-cookies {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    h1 {
+      font-size: 20px;
+      font-weight: 1000;
+    }
+    button {
+      width: 35px;
+      border: 2px solid black;
+      border-radius: 3px;
+      font-size: 20px;
+      color: black;
+      background: #00f0ff;
+    }
+    button:hover {
+      background-color: #03a9b5;
+    }
+  }
+  p {
+    font-size: 13px;
+    text-align: justify;
+    padding-inline: 20px;
+  }
+  #aceitar {
+    background-color: #00f0ff;
+    width: 130px;
+    padding: 5px;
+    font-family: "JetBrains Mono";
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 0 20px;
+    border: 2px solid black;
+    color: black;
+    border-radius: 4px;
+  }
+}
+
+.animar-tela {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.apareceu {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .quadrado {
   border-radius: 3px;
@@ -839,7 +915,7 @@ button:hover {
   transform: scale(0.95);
   transition: 0.5s ease-in-out;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -863,5 +939,106 @@ html{
 
 /*celular portrait*/
 @media (min-width: 320px) and (max-width: 480px) {
+}
 
+/* Fundo escuro (Overlay) */
+.overlay-carrinho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Preto com 50% de transparência */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+  z-index: 998; /* Fica acima do site, mas abaixo da sidebar */
+}
+
+/* Sidebar Principal */
+.sidebar-carrinho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px; /* Largura do carrinho */
+  max-width: 100vw; /* Garante que não quebre em celulares */
+  height: 100vh;
+  background-color: #faf6ee;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+
+  /* A MÁGICA DA ANIMAÇÃO: Empurra 100% da própria largura para a direita (escondendo-a) */
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animação suave e com freio no final */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-carrinho.aberta {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-carrinho.aberta {
+  transform: translateX(0);
+}
+
+.carrinho-header {
+  font-family: "JetBrains Mono";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+  padding-top: 2vw;
+  background-color: #ff00a8;
+  color: white;
+  margin-top: 3vw;
+  h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.botao-fechar-carrinho {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.botao-fechar-carrinho:hover {
+  transform: scale(1.2);
+}
+
+.carrinho-conteudo {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  font-family: "JetBrains Mono";
+  color: black;
+}
+
+.botao-conteudo {
+  background-color: #00f0ff;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-family: "JetBrains Mono";
+  font-weight: 500;
+  font-size: 20px;
+}
+.botao-conteudo:hover {
+  transform: scale(0.95);
+  background-color: #03a9b5;
+  transition: 0.5s ease-in-out;
+}
+
+.carrinho-footer {
+  padding: 20px;
 }

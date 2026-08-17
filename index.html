@@ -13,7 +13,7 @@
         <img id="voltar" src="assets/images/salvar-transparente.svg" alt="" />
         <div class="logo-texto">
           <h2>
-            <a style="text-decoration: none; color: #39ff14" href="#voltar"
+            <a style="text-decoration: none; color: #39ff14" href=""
               >PixelCraft-Studio.exe</a
             >
           </h2>
@@ -22,9 +22,15 @@
       </div>
       <div class="card-container">
         <div class="card-header"><a href="#sobre-nos">Sobre nós</a></div>
-        <div class="card-header"><a href="#cards-usuarios-avaliacoes">Avaliações</a></div>
-        <div class="card-header"><a href="#inscrever-newsletter">Inscreva-se</a></div>
-        <div class="card-header" id="status"><a href="">Carrinho</a></div>
+        <div class="card-header">
+          <a href="#cards-usuarios-avaliacoes">Avaliações</a>
+        </div>
+        <div class="card-header">
+          <a href="#inscrever-newsletter">Inscreva-se</a>
+        </div>
+        <div class="card-header" id="status">
+          <a href="#" id="botao-abrir-carrinho">Carrinho</a>
+        </div>
       </div>
     </header>
 
@@ -48,11 +54,14 @@
                 texturas de tela de alto contraste.
               </h4>
               <div class="container-botoes-inicio">
-                <button class="botao-inicio-azul botoes-inicio">
+                <button class="botao-inicio-azul botoes-inicio" id="botao-loja">
                   LOJA.EXE
                 </button>
-                <button class="botao-inicio-rosa botoes-inicio">
-                  VER_GALERIA.DLL
+                <button
+                  class="botao-inicio-rosa botoes-inicio"
+                  id="botao-avaliacao"
+                >
+                  VER_AVALIAÇÕES.DLL
                 </button>
               </div>
             </div>
@@ -210,7 +219,7 @@
       </div>
 
       <!--Bloco dois-->
-      <section class="principal">
+      <section class="principal animar-tela" id="loja">
         <div class="bloco-dois">
           <div class="texto-bl-dois-inicial">
             <div class="blocagem-texto-direita">
@@ -580,7 +589,7 @@
       </section>
 
       <!--Bloco três-->
-      <section class="principal">
+      <section class="principal animar-tela">
         <div class="segundo-bloco">
           <div class="titulo-card-model garden-bloco">
             <div class="bola-texto">
@@ -622,7 +631,7 @@
       </section>
 
       <!--Bloco quatro-->
-      <section class="principal" id="sobre-nos">
+      <section class="principal animar-tela" id="sobre-nos">
         <div class="bloco-quatro">
           <div class="bl-quatro-esquerda">
             <div class="item-bloco">
@@ -702,7 +711,7 @@
       </section>
 
       <!--Bloco cinco-->
-      <section class="principal">
+      <section class="principal animar-tela">
         <div class="bloco-cinco">
           <h5>[ ORDEM_INDUSTRIAL ]</h5>
           <h3>A LINHA DE PRODUÇÃO HÍBRIDA_ARTESANATO</h3>
@@ -915,7 +924,7 @@
       </section>
 
       <!--Bloco seis-->
-      <section class="avaliacoes" id="cards-usuarios-avaliacoes">
+      <section class="avaliacoes animar-tela" id="cards-usuarios-avaliacoes">
         <div class="bloco-seis">
           <h3>[ LOG_FORUM_CONSUMIDOR ]</h3>
           <h1>CHAT DO CONSUMIDOR</h1>
@@ -1186,7 +1195,7 @@
       </section>
 
       <!--Bloco sete-->
-      <section class="principal" id="inscrever-newsletter">
+      <section class="principal animar-tela" id="inscrever-newsletter">
         <div class="bloco-sete">
           <div class="item-bloco newsletter">
             <div class="titulo-card-model">
@@ -1196,7 +1205,7 @@
                   src="assets/images/bolinha-rosa.png"
                   alt=""
                 />
-                <h2 class="texto-card-model">INCREVA_SE.EXE</h2>
+                <h2 class="texto-card-model">INSCREVA_SE.EXE</h2>
               </div>
               <div class="quadrado-container">
                 <img
@@ -1231,7 +1240,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="animar-tela">
       <div class="footer-principal">
         <div class="footer-texto-esquerda">
           <h1>PIXELCRAFT</h1>
@@ -1270,14 +1279,55 @@
         <p>© 2016-2026 PixelCraft Studio. Feito com pixels e argila.</p>
       </div>
       <div class="visitantes">
-         <h6>
-        Sistema: Conectado // Forno de Cerâmica: 1240°C Estável // Status:
-        Carregado.exe
-      </h6>
+        <h6>
+          Sistema: Conectado // Forno de Cerâmica: 1240°C Estável // Status:
+          Carregado.exe
+        </h6>
         <h5>Contagem de visitantes: 002,491,955</h5>
       </div>
-     
     </footer>
+
+    <div class="overlay">
+      <div class="cookies">
+        <div class="titulo-cookies">
+          <h1>Aceitar o uso de cookies</h1>
+          <button onclick="negouCookies()">x</button>
+        </div>
+        <p>
+          Nós usamos cookies para melhorar sua experiência em nosso site, servir
+          conteúdos personalizados e analisar nosso tráfego.
+        </p>
+        <p>
+          Clicando em Aceito, você concorda no armazenamento dos cookies no seu
+          dispositivo.
+        </p>
+        <button id="aceitar" onclick="aceitouCookies()">Aceitar</button>
+      </div>
+    </div>
+
+    <div id="overlay-carrinho" class="overlay-carrinho"></div>
+
+    <aside id="sidebar-carrinho" class="sidebar-carrinho">
+      <div class="carrinho-header">
+        <h2 class="texto-card-model">SEU CARRINHO</h2>
+        <button id="botao-fechar-carrinho" class="botao-fechar-carrinho">
+          X
+        </button>
+      </div>
+
+      <div class="carrinho-conteudo">
+        <p>Seu carrinho está vazio no momento.</p>
+      </div>
+
+      <div class="carrinho-footer">
+        <button
+          class="botao-conteudo"
+          style="width: 100%; justify-content: center"
+        >
+          Finalizar Compra
+        </button>
+      </div>
+    </aside>
 
     <script src="script.js"></script>
   </body>
